@@ -1,0 +1,2 @@
+Plantilla: https://htmlcodex.com/it-solutions-website-template/
+DataSet: https://www.kaggle.com/datasets/shubham2703/smartphone-retail-outlet-sales-data
