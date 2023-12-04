@@ -6,10 +6,11 @@ import { TopbarComponent } from './shared/topbar/topbar.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { IndexComponent } from './pages/index/index.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent, IndexComponent,TopbarComponent],
+  imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent, IndexComponent, TopbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
