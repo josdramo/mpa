@@ -307,9 +307,9 @@
 <!-- Formulario de filtro por precio -->
 <form>
   <label for="precioFiltro">Filtrar por precio:</label>
-  <select id="precioFiltro" (change)="aplicarFiltro()" (ngModel)="filtroPrecio">
-      <option value="menor">Menor Precio</option>
-      <option value="mayor">Mayor Precio</option>
+  <select id="precioFiltro" name="precioFiltro" (change)="aplicarFiltro()" [(ngModel)]="filtroPrecio">
+    <option value="menor">Menor Precio</option>
+    <option value="mayor">Mayor Precio</option>
   </select>
 </form>
 
@@ -324,10 +324,10 @@
   </thead>
   <tbody>
     <ng-container *ngIf="productosFiltrados && productosFiltrados.length > 0; else noData">
-      <tr *ngFor="let item of productosFiltrados; let i = index">
+      <tr *ngFor="let item of productosFiltrados">
         <td>
-          <img src="assets/img/producto_{{ i + 1 }}.jpg" alt="Producto {{ i + 1 }}" width="50"
-            height="50">
+          <!-- Agrega aquí la lógica para mostrar la imagen, por ejemplo, usando el índice -->
+          <img src="assets/img/producto_{{ data.indexOf(item) + 1 }}.jpg" alt="Producto {{ data.indexOf(item) + 1 }}" width="50" height="50">
         </td>
         <td>{{ item.Price }}</td>
         <td>{{ item['TYPE OF ACCESSORY MOBILE'] }}</td>
