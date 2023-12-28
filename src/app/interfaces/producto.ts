@@ -12,4 +12,6 @@ export interface Producto {
   "TYPE OF ACCESSORY MOBILE": string
   "TYPE OF PRODUCT": string
   Column16?: string
+  Nombre?: string; 
+  ImagenAlt?: string;
 }

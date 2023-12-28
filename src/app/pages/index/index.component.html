@@ -306,41 +306,46 @@
 
 <!-- Formulario de filtro por precio -->
 <form>
-  <label for="precioFiltro">Filtrar por precio:</label>
-  <select id="precioFiltro" name="precioFiltro" (change)="aplicarFiltro()" [(ngModel)]="filtroPrecio">
-    <option value="menor">Menor Precio</option>
-    <option value="mayor">Mayor Precio</option>
-  </select>
+  <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+    <h1><label for="precioFiltro">Revisa Nuestros Mejores Productos por Precio:</label></h1>
+    <select id="precioFiltro" name="precioFiltro" (change)="aplicarFiltro()" [(ngModel)]="filtroPrecio" class="select-css">
+      <option value="menor" class="text-primary">Menor Precio</option>
+      <option value="mayor" class="text-primary">Mayor Precio</option>
+    </select>
+  </div>
+  
 </form>
-
-<!-- Tabla con datos de los primeros 10 productos filtrados por precio -->
-<table>
-  <thead>
-    <tr>
-      <th>Producto</th>
-      <th>Precio</th>
-      <th>Tipo</th>
-    </tr>
-  </thead>
-  <tbody>
-    <ng-container *ngIf="productosFiltrados && productosFiltrados.length > 0; else noData">
-      <tr *ngFor="let item of productosFiltrados">
-        <td>
-          <!-- Agrega aquí la lógica para mostrar la imagen, por ejemplo, usando el índice -->
-          <img src="assets/img/producto_{{ data.indexOf(item) + 1 }}.jpg" alt="Producto {{ data.indexOf(item) + 1 }}" width="50" height="50">
-        </td>
-        <td>{{ item.Price }}</td>
-        <td>{{ item['TYPE OF ACCESSORY MOBILE'] }}</td>
-      </tr>
-    </ng-container>
-    <ng-template #noData>
+<div class="row g-5 mx-4 justify-content-center">
+  <!-- Tabla con datos de los primeros 10 productos filtrados por precio -->
+  <table>
+    <thead>
       <tr>
-        <td colspan="3" class="text-center">No hay productos que coincidan con el filtro</td>
+        <th>Producto</th>
+        <th>Numero de Producto</th>
+        <th>Precio</th>
+        <th>Tipo</th>
       </tr>
-    </ng-template>
-  </tbody>
-</table>
-
+    </thead>
+    <tbody>
+      <ng-container *ngIf="productosFiltrados && productosFiltrados.length > 0; else noData">
+        <tr *ngFor="let item of productosFiltrados">
+          <td>
+            <!-- Agrega aquí la lógica para mostrar la imagen, por ejemplo, usando el índice -->
+            <img src="assets/img/{{ item.ImagenAlt }}.jpg" alt="{{ item.ImagenAlt }}" width="150px" height="200px">
+          </td>
+          <td>{{ item.ImagenAlt }}</td>
+          <td>{{ item.Price }}</td>
+          <td>{{ item['TYPE OF ACCESSORY MOBILE'] }}</td>
+        </tr>
+      </ng-container>
+      <ng-template #noData>
+        <tr>
+          <td colspan="3" class="text-center">No hay productos que coincidan con el filtro</td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table>
+</div>
 <!-- Blog Start -->
 <div class="container-fluid blog py-5 mb-5">
   <div class="container">
@@ -458,216 +463,6 @@
   </div>
 </div>
 <!-- Blog End -->
-
-
-<!-- Team Start -->
-<div class="container-fluid py-5 mb-5 team">
-  <div class="container">
-    <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-      <h5 class="text-primary">Our Team</h5>
-      <h1>Meet our expert Team</h1>
-    </div>
-    <div class="owl-carousel team-carousel wow fadeIn" data-wow-delay=".5s">
-      <div class="rounded team-item">
-        <div class="team-content">
-          <div class="team-img-icon">
-            <div class="team-img rounded-circle">
-              <img src="assets/img/team-1.jpg" class="img-fluid w-100 rounded-circle" alt="">
-            </div>
-            <div class="team-name text-center py-3">
-              <h4 class="">Full Name</h4>
-              <p class="m-0">Designation</p>
-            </div>
-            <div class="team-icon d-flex justify-content-center pb-4">
-              <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
-                  class="fab fa-facebook-f"></i></a>
-              <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
-                  class="fab fa-twitter"></i></a>
-              <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
-                  class="fab fa-instagram"></i></a>
-              <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
-                  class="fab fa-linkedin-in"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="rounded team-item">
-        <div class="team-content">
-          <div class="team-img-icon">
-            <div class="team-img rounded-circle">
-              <img src="assets/img/team-2.jpg" class="img-fluid w-100 rounded-circle" alt="">
-            </div>
-            <div class="team-name text-center py-3">
-              <h4 class="">Full Name</h4>
-              <p class="m-0">Designation</p>
-            </div>
-            <div class="team-icon d-flex justify-content-center pb-4">
-              <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
-                  class="fab fa-facebook-f"></i></a>
-              <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
-                  class="fab fa-twitter"></i></a>
-              <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
-                  class="fab fa-instagram"></i></a>
-              <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
-                  class="fab fa-linkedin-in"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="rounded team-item">
-        <div class="team-content">
-          <div class="team-img-icon">
-            <div class="team-img rounded-circle">
-              <img src="assets/img/team-3.jpg" class="img-fluid w-100 rounded-circle" alt="">
-            </div>
-            <div class="team-name text-center py-3">
-              <h4 class="">Full Name</h4>
-              <p class="m-0">Designation</p>
-            </div>
-            <div class="team-icon d-flex justify-content-center pb-4">
-              <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
-                  class="fab fa-facebook-f"></i></a>
-              <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
-                  class="fab fa-twitter"></i></a>
-              <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
-                  class="fab fa-instagram"></i></a>
-              <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
-                  class="fab fa-linkedin-in"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="rounded team-item">
-        <div class="team-content">
-          <div class="team-img-icon">
-            <div class="team-img rounded-circle">
-              <img src="assets/img/team-4.jpg" class="img-fluid w-100 rounded-circle" alt="">
-            </div>
-            <div class="team-name text-center py-3">
-              <h4 class="">Full Name</h4>
-              <p class="m-0">Designation</p>
-            </div>
-            <div class="team-icon d-flex justify-content-center pb-4">
-              <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
-                  class="fab fa-facebook-f"></i></a>
-              <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
-                  class="fab fa-twitter"></i></a>
-              <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
-                  class="fab fa-instagram"></i></a>
-              <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i
-                  class="fab fa-linkedin-in"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Team End -->
-
-<!-- Testimonial Start -->
-<div class="container-fluid testimonial py-5 mb-5">
-  <div class="container">
-    <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-      <h5 class="text-primary">Our Testimonial</h5>
-      <h1>Our Client Saying!</h1>
-    </div>
-    <div class="owl-carousel testimonial-carousel wow fadeIn" data-wow-delay=".5s">
-      <div class="testimonial-item border p-4">
-        <div class="d-flex align-items-center">
-          <div class="">
-            <img src="assets/img/testimonial-1.jpg" alt="">
-          </div>
-          <div class="ms-4">
-            <h4 class="text-secondary">Client Name</h4>
-            <p class="m-0 pb-3">Profession</p>
-            <div class="d-flex pe-5">
-              <i class="fas fa-star me-1 text-primary"></i>
-              <i class="fas fa-star me-1 text-primary"></i>
-              <i class="fas fa-star me-1 text-primary"></i>
-              <i class="fas fa-star me-1 text-primary"></i>
-              <i class="fas fa-star me-1 text-primary"></i>
-            </div>
-          </div>
-        </div>
-        <div class="border-top mt-4 pt-3">
-          <p class="mb-0">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum aliquam dolor eget
-            urna. Nam volutpat libero sit amet leo cursus, ac viverra eros morbi quis quam mi.</p>
-        </div>
-      </div>
-      <div class="testimonial-item border p-4">
-        <div class=" d-flex align-items-center">
-          <div class="">
-            <img src="assets/img/testimonial-2.jpg" alt="">
-          </div>
-          <div class="ms-4">
-            <h4 class="text-secondary">Client Name</h4>
-            <p class="m-0 pb-3">Profession</p>
-            <div class="d-flex pe-5">
-              <i class="fas fa-star me-1 text-primary"></i>
-              <i class="fas fa-star me-1 text-primary"></i>
-              <i class="fas fa-star me-1 text-primary"></i>
-              <i class="fas fa-star me-1 text-primary"></i>
-              <i class="fas fa-star me-1 text-primary"></i>
-            </div>
-          </div>
-        </div>
-        <div class="border-top mt-4 pt-3">
-          <p class="mb-0">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum aliquam dolor eget
-            urna. Nam volutpat libero sit amet leo cursus, ac viverra eros morbi quis quam mi.</p>
-        </div>
-      </div>
-      <div class="testimonial-item border p-4">
-        <div class=" d-flex align-items-center">
-          <div class="">
-            <img src="assets/img/testimonial-3.jpg" alt="">
-          </div>
-          <div class="ms-4">
-            <h4 class="text-secondary">Client Name</h4>
-            <p class="m-0 pb-3">Profession</p>
-            <div class="d-flex pe-5">
-              <i class="fas fa-star me-1 text-primary"></i>
-              <i class="fas fa-star me-1 text-primary"></i>
-              <i class="fas fa-star me-1 text-primary"></i>
-              <i class="fas fa-star me-1 text-primary"></i>
-              <i class="fas fa-star me-1 text-primary"></i>
-            </div>
-          </div>
-        </div>
-        <div class="border-top mt-4 pt-3">
-          <p class="mb-0">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum aliquam dolor eget
-            urna. Nam volutpat libero sit amet leo cursus, ac viverra eros morbi quis quam mi.</p>
-        </div>
-      </div>
-      <div class="testimonial-item border p-4">
-        <div class=" d-flex align-items-center">
-          <div class="">
-            <img src="assets/img/testimonial-4.jpg" alt="">
-          </div>
-          <div class="ms-4">
-            <h4 class="text-secondary">Client Name</h4>
-            <p class="m-0 pb-3">Profession</p>
-            <div class="d-flex pe-5">
-              <i class="fas fa-star me-1 text-primary"></i>
-              <i class="fas fa-star me-1 text-primary"></i>
-              <i class="fas fa-star me-1 text-primary"></i>
-              <i class="fas fa-star me-1 text-primary"></i>
-              <i class="fas fa-star me-1 text-primary"></i>
-            </div>
-          </div>
-        </div>
-        <div class="border-top mt-4 pt-3">
-          <p class="mb-0">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum aliquam dolor eget
-            urna. Nam volutpat libero sit amet leo cursus, ac viverra eros morbi quis quam mi.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Testimonial End -->
-
-
 
 
 <!-- Back to Top -->
