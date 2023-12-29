@@ -40,3 +40,96 @@
    .select-css option {
     font-weight:normal;
    }
+
+   th {
+    background-color: #1DB9A4;
+    border-radius: 1px;
+   }
+
+   .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-radius: 5px;
+  }
+
+  td {
+    font-weight: bolder;
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    border-radius: 5px;
+  }
+  
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  .table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+  }
+  
+  .table-sm th,
+  .table-sm td {
+    padding: 0.3rem;
+  }
+  
+  .table-bordered {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table-bordered thead th,
+  .table-bordered thead td {
+    border-bottom-width: 2px;
+  }
+  
+  .table-borderless th,
+  .table-borderless td,
+  .table-borderless thead th,
+  .table-borderless tbody + tbody {
+    border: 0;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .table-hover tbody tr:hover {
+    color: #212529;
+    background-color: rgba(0, 0, 0, 0.075);
+  }
+  
+  .table-primary,
+  .table-primary > th,
+  .table-primary > td {
+    background-color: #b8daff;
+  }
+  
+
+  .product-image {
+    border-left: 4px solid #1DB9A4; 
+  }
+  
+  .product-number {
+    border-left: 4px solid #1DB9A4; 
+  }
+  
+  .product-price {
+    border-left: 4px solid #1DB9A4; 
+  }
+  
+  .product-type {
+    border-left: 4px solid #1DB9A4; 
+  }
+

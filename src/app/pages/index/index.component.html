@@ -102,17 +102,17 @@
         </div>
       </div>
       <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
-        <h5 class="text-primary">About Us</h5>
-        <h1 class="mb-4">About HighTech Agency And It's Innovative IT Solutions</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur quis purus ut interdum. Pellentesque
-          aliquam dolor eget urna ultricies tincidunt. Nam volutpat libero sit amet leo cursus, ac viverra eros
-          tristique. Morbi quis quam mi. Cras vel gravida eros. Proin scelerisque quam nec elementum viverra.
-          Suspendisse viverra hendrerit diam in tempus. Etiam gravida justo nec erat vestibulum, et malesuada augue
-          laoreet.</p>
-        <p class="mb-4">Pellentesque aliquam dolor eget urna ultricies tincidunt. Nam volutpat libero sit amet leo
-          cursus, ac viverra eros tristique. Morbi quis quam mi. Cras vel gravida eros. Proin scelerisque quam nec
-          elementum viverra. Suspendisse viverra hendrerit diam in tempus.</p>
-        <a routerLink="/" class="btn btn-secondary rounded-pill px-5 py-3 text-white">More Details</a>
+        <h5 class="text-primary">Sobre Nosotros</h5>
+        <h1 class="mb-4">Innovación Digital: Forjando el Futuro del Retail Móvil</h1>
+        <p>Descubre la esencia de SmartShop, donde la innovación digital es nuestro motor. Exploramos las
+          fronteras
+          tecnológicas para ofrecer experiencias de compra únicas y revolucionar el mundo del retail móvil.</p>
+        <p class="mb-4">En SmartShop, nos enorgullece estar a la vanguardia de la revolución digital. Desde
+          soluciones
+          personalizadas hasta experiencias de cliente sin igual, estamos comprometidos con la excelencia y la
+          transformación. Únete a nosotros mientras creamos un futuro donde cada interacción sea una experiencia
+          innovadora.</p>
+        <a routerLink="/about" class="btn btn-secondary rounded-pill px-5 py-3 text-white">Mas detalles</a>
       </div>
     </div>
   </div>
@@ -269,18 +269,19 @@
 <form>
   <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
     <h1><label for="precioFiltro">Revisa Nuestros Mejores Productos por Precio:</label></h1>
-    <select id="precioFiltro" name="precioFiltro" (change)="aplicarFiltro()" [(ngModel)]="filtroPrecio" class="select-css">
+    <select id="precioFiltro" name="precioFiltro" (change)="aplicarFiltro()" [(ngModel)]="filtroPrecio"
+      class="select-css">
       <option value="menor" class="text-primary">Menor Precio</option>
       <option value="mayor" class="text-primary">Mayor Precio</option>
     </select>
   </div>
-  
+
 </form>
 <div class="row g-5 mx-4 justify-content-center">
   <!-- Tabla con datos de los primeros 10 productos filtrados por precio -->
   <table class="text-center">
     <thead>
-      <tr class="text-secondary">
+      <tr class="text-white">
         <th>Producto</th>
         <th>Numero de Producto</th>
         <th>Precio</th>
@@ -289,14 +290,13 @@
     </thead>
     <tbody>
       <ng-container *ngIf="productosFiltrados && productosFiltrados.length > 0; else noData">
-        <tr *ngFor="let item of productosFiltrados">
-          <td>
-            <!-- Agrega aquí la lógica para mostrar la imagen, por ejemplo, usando el índice -->
+        <tr *ngFor="let item of productosFiltrados" class="text-primary">
+          <td class="product-image">
             <img src="assets/img/{{ item.ImagenAlt }}.jpg" alt="{{ item.ImagenAlt }}" width="150px" height="200px">
           </td>
-          <td>{{ item.ImagenAlt }}</td>
-          <td>{{ item.Price }}</td>
-          <td>{{ item['TYPE OF ACCESSORY MOBILE'] }}</td>
+          <td class="product-number">{{ item.ImagenAlt }}</td>
+          <td class="product-price">{{ item.Price }}</td>
+          <td class="product-type">{{ item['TYPE OF ACCESSORY MOBILE'] }}</td>
         </tr>
       </ng-container>
       <ng-template #noData>
@@ -311,18 +311,18 @@
 <div class="container-fluid blog py-5 mb-5">
   <div class="container">
     <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-      <h5 class="text-primary">Our Blog</h5>
-      <h1>Latest Blog & News</h1>
+      <h5 class="text-primary">Nuestro Blog</h5>
+      <h1>Ultimas Noticias & Blogs</h1>
     </div>
     <div class="row g-5 justify-content-center">
       <div class="col-lg-6 col-xl-4 wow fadeIn" data-wow-delay=".3s">
         <div class="blog-item position-relative bg-light rounded">
           <img src="assets/img/blog-1.jpg" class="img-fluid w-100 rounded-top" alt="">
-          <span class="position-absolute px-4 py-3 bg-primary text-white rounded" style="top: -28px; right: 20px;">Web
-            Design</span>
+          <span class="position-absolute px-4 py-3 bg-primary text-white rounded" style="top: -28px; right: 20px;">Ecos
+            Sostenibles</span>
           <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
             <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
-              <a routerLink="/" class="btn text-white">Read More</a>
+              <a routerLink="/" class="btn text-white">Lee Mas</a>
             </div>
             <div class="blog-btn-icon btn btn-secondary px-4 py-3 rounded-pill ">
               <div class="blog-icon-1">
@@ -337,16 +337,16 @@
           </div>
           <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
             <img src="assets/img/admin.jpg" class="img-fluid rounded-circle border border-4 border-white mb-3" alt="">
-            <h5 class="">By Daniel Martin</h5>
+            <h5 class="">Por Daniel Martin</h5>
             <span class="text-secondary">24 March 2023</span>
-            <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget
-              urna ultricies tincidunt libero sit amet</p>
+            <p class="py-2">Descubre las últimas tendencias en tecnología sostenible y cómo están impactando
+              positivamente en el retail de smartphones.</p>
           </div>
           <div class="blog-coment d-flex justify-content-between px-4 py-2 border bg-primary rounded-bottom">
-            <a routerLink="/" class="text-white"><small><i class="fas fa-share me-2 text-secondary"></i>5324
-                Share</small></a>
+            <a routerLink="/" class="text-white"><small><i class="fas fa-share me-2 text-secondary"></i>6324
+                Compartidos</small></a>
             <a routerLink="/" class="text-white"><small><i class="fa fa-comments me-2 text-secondary"></i>5
-                Comments</small></a>
+                Comentarios</small></a>
           </div>
         </div>
       </div>
@@ -354,10 +354,10 @@
         <div class="blog-item position-relative bg-light rounded">
           <img src="assets/img/blog-2.jpg" class="img-fluid w-100 rounded-top" alt="">
           <span class="position-absolute px-4 py-3 bg-primary text-white rounded"
-            style="top: -28px; right: 20px;">Development</span>
+            style="top: -28px; right: 20px;">Innovación Digital</span>
           <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
             <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
-              <a class="btn text-white ">Read More</a>
+              <a class="btn text-white ">Lee Mas</a>
             </div>
             <div class="blog-btn-icon btn btn-secondary px-4 py-3 rounded-pill ">
               <div class="blog-icon-1">
@@ -371,17 +371,17 @@
             </div>
           </div>
           <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
-            <img src="assets/img/admin.jpg" class="img-fluid rounded-circle border border-4 border-white mb-3" alt="">
-            <h5 class="">By Daniel Martin</h5>
+            <img src="assets/img/team-2.jpg" class="img-fluid rounded-circle border border-4 border-white mb-3" alt="">
+            <h5 class="">Por Pedro Diaz</h5>
             <span class="text-secondary">23 April 2023</span>
-            <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget
-              urna ultricies tincidunt libero sit amet</p>
+            <p class="py-2">Explora la revolución digital en el mundo del retail, destacando las últimas innovaciones y
+              su influencia en la experiencia del cliente.</p>
           </div>
           <div class="blog-coment d-flex justify-content-between px-4 py-2 border bg-primary rounded-bottom">
-            <a routerLink="/" class="text-white"><small><i class="fas fa-share me-2 text-secondary"></i>5324
-                Share</small></a>
-            <a routerLink="/" class="text-white"><small><i class="fa fa-comments me-2 text-secondary"></i>5
-                Comments</small></a>
+            <a routerLink="/" class="text-white"><small><i class="fas fa-share me-2 text-secondary"></i>3324
+                Compartidos</small></a>
+            <a routerLink="/" class="text-white"><small><i class="fa fa-comments me-2 text-secondary"></i>7
+                Comentarios</small></a>
           </div>
         </div>
       </div>
@@ -389,10 +389,10 @@
         <div class="blog-item position-relative bg-light rounded">
           <img src="assets/img/blog-3.jpg" class="img-fluid w-100 rounded-top" alt="">
           <span class="position-absolute px-4 py-3 bg-primary text-white rounded"
-            style="top: -28px; right: 20px;">Mobile App</span>
+            style="top: -28px; right: 20px;">Conectados Hoy</span>
           <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
             <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
-              <a routerLink="/" class="btn text-white ">Read More</a>
+              <a routerLink="/" class="btn text-white ">Lee Mas</a>
             </div>
             <div class="blog-btn-icon btn btn-secondary px-4 py-3 rounded-pill ">
               <div class="blog-icon-1">
@@ -406,17 +406,17 @@
             </div>
           </div>
           <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
-            <img src="assets/img/admin.jpg" class="img-fluid rounded-circle border border-4 border-white mb-3" alt="">
-            <h5 class="">By Daniel Martin</h5>
+            <img src="assets/img/team-1.jpg" class="img-fluid rounded-circle border border-4 border-white mb-3" alt="">
+            <h5 class="">Por Martha Perez</h5>
             <span class="text-secondary">30 jan 2023</span>
-            <p class="py-2">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget
-              urna ultricies tincidunt libero sit amet</p>
+            <p class="py-2">Sumérgete en las novedades de SmartShop, explorando cómo la conectividad redefine la manera
+              en que vivimos, trabajamos y compramos.</p>
           </div>
           <div class="blog-coments d-flex justify-content-between px-4 py-2 border bg-primary rounded-bottom">
             <a routerLink="/" class="text-white"><small><i class="fas fa-share me-2 text-secondary"></i>5324
-                Share</small></a>
-            <a routerLink="/" class="text-white"><small><i class="fa fa-comments me-2 text-secondary"></i>5
-                Comments</small></a>
+                Compartidos</small></a>
+            <a routerLink="/" class="text-white"><small><i class="fa fa-comments me-2 text-secondary"></i>10
+                Comentarios</small></a>
           </div>
         </div>
       </div>
