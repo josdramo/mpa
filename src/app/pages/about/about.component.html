@@ -1,11 +1,11 @@
 <div class="container-fluid page-header py-5">
     <div class="container text-center py-5">
-        <h1 class="display-2 text-white mb-4 animated slideInDown">About Us</h1>
+        <h1 class="display-2 text-white mb-4 animated slideInDown">Sobre Nosotros</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                <li class="breadcrumb-item" aria-current="page">About</li>
+                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="#">Contacto</a></li>
+                <li class="breadcrumb-item" aria-current="page">Sobre</li>
             </ol>
         </nav>
     </div>
@@ -20,25 +20,25 @@
             <div class="col-lg-3 wow fadeIn" data-wow-delay=".1s">
                 <div class="d-flex counter">
                     <h1 class="me-3 text-primary counter-value">99</h1>
-                    <h5 class="text-white mt-1">Success in getting happy customer</h5>
+                    <h5 class="text-white mt-1">Porcentaje de clientes satisfechos</h5>
                 </div>
             </div>
             <div class="col-lg-3 wow fadeIn" data-wow-delay=".3s">
                 <div class="d-flex counter">
                     <h1 class="me-3 text-primary counter-value">25</h1>
-                    <h5 class="text-white mt-1">Thousands of successful business</h5>
+                    <h5 class="text-white mt-1">Envíos a domicilio</h5>
                 </div>
             </div>
             <div class="col-lg-3 wow fadeIn" data-wow-delay=".5s">
                 <div class="d-flex counter">
                     <h1 class="me-3 text-primary counter-value">120</h1>
-                    <h5 class="text-white mt-1">Total clients who love HighTech</h5>
+                    <h5 class="text-white mt-1">Clientes que aman SmartShop</h5>
                 </div>
             </div>
             <div class="col-lg-3 wow fadeIn" data-wow-delay=".7s">
                 <div class="d-flex counter">
                     <h1 class="me-3 text-primary counter-value">5</h1>
-                    <h5 class="text-white mt-1">Stars reviews given by satisfied clients</h5>
+                    <h5 class="text-white mt-1">Estrellas dadas por clientes satisfechos</h5>
                 </div>
             </div>
         </div>
@@ -76,24 +76,6 @@
     </div>
 </div>
 <!-- About End -->
-<!-- Tabla con datos -->
-
-<table>
-    <tbody>
-        @for (datum of data; track datum) {
-          <tr>
-            <th> {{  datum["Amount"]  }}  </th>
-            <td> {{  datum[" F Y"]  }}  </td>
-            <td> {{  datum["Date"] }} </td>
-          </tr>
-        } @empty {
-          <tr>
-            <td colspan="4" class="text-center">Aún no hay datos</td>
-          </tr>
-        }
-    </tbody>
-</table>
-
 <!-- Team Start -->
 <div class="container-fluid pb-5 mb-5 team">
     <div class="container pb-5">
@@ -106,10 +88,10 @@
                 <div class="team-content">
                     <div class="team-img-icon">
                         <div class="team-img rounded-circle">
-                            <img src="assets/img/Jose_Ramos.jpeg" class="img-fluid w-100 rounded-circle" alt="Jose_Ramos">
+                            <img src="src/assets/img/josdramo.jpeg" class="img-fluid w-100 rounded-circle" alt="josdramo">
                         </div>
                         <div class="team-name text-center py-3">
-                            <h4 class="">Jose Ramos</h4>
+                            <h4 class="">josdramo</h4>
                             <p class="m-0">Inicio</p>
                         </div>
                         <div class="team-icon d-flex justify-content-center pb-4">
@@ -125,10 +107,10 @@
                 <div class="team-content">
                     <div class="team-img-icon">
                         <div class="team-img rounded-circle">
-                            <img src="assets/img/Génesis_Pacheco.jpg" class="img-fluid w-100 rounded-circle" alt="Génesis_Pacheco">
+                            <img src="src/assets/img/ggpachec.png" class="img-fluid w-100 rounded-circle" alt="ggpachec">
                         </div>
                         <div class="team-name text-center py-3">
-                            <h4 class="">Génesis Pacheco</h4>
+                            <h4 class="">ggpachec</h4>
                             <p class="m-0">Contacto</p>
                         </div>
                         <div class="team-icon d-flex justify-content-center pb-4">
@@ -144,7 +126,7 @@
                 <div class="team-content">
                     <div class="team-img-icon">
                         <div class="team-img rounded-circle">
-                            <img src="assets/img/GHOST0410.jpg" class="img-fluid w-100 rounded-circle" alt="GHOST0410">
+                            <img src="src/assets/img/GHOST0410.jpg" class="img-fluid w-100 rounded-circle" alt="GHOST0410">
                         </div>
                         <div class="team-name text-center py-3">
                             <h4 class="">GHOST0410</h4>
@@ -163,3 +145,21 @@
     </div>
 </div>
 <!-- Team End -->
+
+<!-- Tabla con datos -->
+
+<table>
+    <tbody>
+        @for (datum of data; track datum) {
+          <tr>
+            <th> {{  datum["Amount"]  }}  </th>
+            <td> {{  datum[" F Y"]  }}  </td>
+            <td> {{  datum["Date"] }} </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="4" class="text-center">Aún no hay datos</td>
+          </tr>
+        }
+    </tbody>
+</table>
