@@ -664,3 +664,20 @@
 }
 
 /*** Footer End ***/
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+tbody {
+    background: rgba(128, 255, 0, 0.3);
+    border: 1px solid rgba(100, 200, 0, 0.3);
+}
